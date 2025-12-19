@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo App</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+
+<style>
+body {
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    min-height: 100vh;
+}
+.empty-msg{
+    text-align: center;
+    margin-top: 45px;
+    font-size: 1.25rem;
+    font-family: cursive;
+    color: #f5e9ff;
+}
+
+
+
+a { text-decoration: none; }
+
+.f-my{
+    font-family: 'Gill Sans','Gill Sans MT',Calibri,'Trebuchet MS',sans-serif;
+}
+
+.btn-addtodo{
+    background-color: #472d5e;
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: large;
+    font-family: cursive;
+}
+
+.btn-edit{
+    background:#736dc4;
+    color:#fff;
+    padding:6px 20px;
+    border-radius:25px;
+    font-family:cursive;
+}
+.btn-edit:hover{ background:#7a6ceb; }
+
+.btn-delete{
+    background:#7d44ae;
+    color:#fff;
+    padding:6px 20px;
+    border-radius:25px;
+    font-family:cursive;
+}
+.btn-delete:hover{ background:#e85a70; }
+
+.todo-card{
+    background-color: rgba(255,255,255,0.05);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    padding: 1.5rem;
+}
+
+.list-group-item{
+    background-color: rgba(255,255,255,0.1);
+    border:none;
+    margin-bottom:8px;
+    border-radius:8px;
+    color:white;
+}
+
+.empty-msg{
+    text-align:center;
+    color:#ddd;
+    margin-top:40px;
+    font-size:1.1rem;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container py-5">
+    <h1 class="text-center text-white mb-4">Todo List</h1>
+
+    <!-- Add button ALWAYS visible -->
+    <div class="text-center mb-4">
+        <a href="/add" class="btn-addtodo">Add New Todo</a>
+    </div>
+
+    <!-- Empty message OR list -->
+    <% if (todos.length === 0) { %>
+       <p class="empty-msg">
+    Nothing here yet — add your first task 
+    </p>
+
+    <% } else { %>
+
+        <div class="todo-card mx-auto" style="max-width:700px;">
+            <ul class="list-group">
+                <% todos.forEach((todo, i) => { %>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong class="f-my"><%= todo.title %></strong><br>
+                            <small><%= todo.description %></small><br>
+                            <em><%= todo.category %> | <%= todo.status %></em>
+                        </div>
+                        <div>
+                            <a href="/edit/<%= i %>" class="btn-edit">Edit</a>
+                            <a href="/delete/<%= i %>" class="btn-delete">Delete</a>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+
+    <% } %>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
