@@ -27,6 +27,22 @@ Add Todo Page – Create a new todo using a form
 
 Edit Todo Page – Update existing todo details
 
+## 📸 Screenshots
+
+### 📝 Todo List Page
+<img width="1505" height="755" alt="image" src="https://github.com/user-attachments/assets/2ee575bb-e62a-4ed3-b1dd-1402cdc1694f" />
+
+
+
+### ➕ Add New Todo Page
+<img width="958" height="647" alt="image" src="https://github.com/user-attachments/assets/fdf88e87-b396-4aa4-b4ca-3998cdd6b6d6" />
+
+
+### ✏️ Edit Todo Page
+<img width="1258" height="599" alt="image" src="https://github.com/user-attachments/assets/fd7974cd-43a1-4b43-b6a7-138ed7717345" />
+
+
+
 🛠️ Tech Stack
 
 Backend: Node.js, Express.js
